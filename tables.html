@@ -1,0 +1,349 @@
+<div class="col-md-9" style="background-image:url(images/images/bckgrnd.PNG)">
+<!--popup table html-->
+<!-- Modal -->
+  <div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog">
+      
+    
+      <!-- Modal content-->
+      <div class="modal-content" style="border:5px solid grey;">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h4>Preview Of SalesOppFact Data Table</h4>
+    </div>
+        <div class="modal-body">
+      <div *ngIf="showtable">  
+<div id="myFirstDialog" style="width:100%;background-color:white; margin-right: 10px;">  
+<table class="table table-responsive table-striped">
+                    <thead [popover]="myPopover" [popoverOnHover]="true" background-color="grey">
+                       <popover-content #myPopover 
+                placement="left"
+                [animation]="true" 
+                [closeOnMouseOutside]="true">
+                <p>Opp Identifier</p><br>
+                <p>Unique identifier for sales ooprtunities in Seller Mart</p>
+                <br>
+                <p style="color:lightgray">Rate this description</p>
+                <span> <ngb-rating [rate]="0"></ngb-rating></span>
+                <a style="text-decoration: underline;color:blue">Write Your Own Description</a>
+    
+</popover-content>
+ 
+
+                        <tr>
+                            <th>Opp Key</th><th>|</th>
+                            <th>Opp Identifier </th><th>|</th>
+                            <th>Opp Name</th><th>|</th>
+                            <th>Start Date</th><th>|</th>
+                            <th>Close Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+       <tr>
+      <td>11</td>
+      <td>|</td>
+      <td>10C-156G</td>
+      <td>|</td>
+      <td>Select Auditions</td>
+      <td>|</td>
+      <td>10/21/2008</td>
+      <td>|</td>
+      <td>11/19/2008</td>
+    
+    </tr>
+      <tr>
+      <td>12</td>
+      <td>|</td>
+      <td>10C-16YG</td>
+      <td>|</td>
+      <td>Opp Comp</td>
+      <td>|</td>
+      <td>10/25/2008</td>
+      <td>|</td>
+      <td>11/23/2008</td>
+    
+    </tr>
+      <tr>
+      <td>13</td>
+      <td>|</td>
+      <td>10C-36G</td>
+      <td>|</td>
+      <td>Server Comp</td>
+      <td>|</td>
+      <td>10/21/2008</td>
+      <td>|</td>
+      <td>11/19/2008</td>
+    
+    </tr>
+
+      <tr>
+      <td>14</td>
+      <td>|</td>
+      <td>10C-15UG</td>
+      <td>|</td>
+      <td>Azure Comp</td>
+      <td>|</td>
+      <td>10/21/2010</td>
+      <td>|</td>
+      <td>11/19/2010</td>
+    
+    </tr>
+      <tr>
+      <td>51</td>
+      <td>|</td>
+      <td>10C-38G</td>
+      <td>|</td>
+      <td>Opp Mapping</td>
+      <td>|</td>
+      <td>10/26/2008</td>
+      <td>|</td>
+      <td>11/20/2008</td>
+    
+    </tr>
+      <tr>
+      <td>56</td>
+      <td>|</td>
+      <td>10C-8YG</td>
+      <td>|</td>
+      <td>Sales Addition</td>
+      <td>|</td>
+      <td>10/21/2008</td>
+      <td>|</td>
+      <td>11/19/2008</td>
+    
+    </tr>
+      <tr>
+      <td>57</td>
+      <td>|</td>
+      <td>10C-98G</td>
+      <td>|</td>
+      <td>Sales Mapping</td>
+      <td>|</td>
+      <td>10/21/2008</td>
+      <td>|</td>
+      <td>11/19/2008</td>
+    
+    </tr>
+
+    <tr>
+      <td>78</td>
+      <td>|</td>
+      <td>10C-O97G</td>
+      <td>|</td>
+      <td>New mapping</td>
+      <td>|</td>
+      <td>10/21/2008</td>
+      <td>|</td>
+      <td>11/19/2008</td>
+    
+    </tr>
+                    </tbody>
+                </table> 
+</div>   
+
+<dialog id="myInnerDialog" style="width:25%;background-color:white;border:5px solid grey; float: right"> 
+<p>inner dialog box opened</p>
+</dialog>
+</div> 
+</div>
+<!--<div class="modal-footer">
+  <a type="button" class="btn " data-dismiss="modal" style="background-color: green; color: white;">Close</a>
+          </div>-->
+</div></div></div>
+
+<!--/***********/-->
+
+
+
+  <div class="row">
+
+    <div class="col-md-11">
+      <table  id="data" class="table table-responsive  table-striped table-hover" [style.display]="showTable1 ? 'block' : 'none'">
+        <thead>
+          <tr>
+              <th></th>
+              <th></th>
+              <th>Table Name</th>
+              <th>Format</th>
+              <th>Certified</th>
+              <th>Quality</th>
+              <th>Size</th>
+              <th>Avg.Review</th>
+              <th>Business<span class="caret"></span></th>
+              <th>preview</th>
+          </tr>
+          
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="checkbox" name="check1"></td>
+            <td ><span ng-click ="changeIcon()"><i class="fa" ng-class="{'fa-plus': !Clicked, 'fa-minus': Clicked}" aria-hidden="true"></i>
+                
+              </span>
+
+             
+            </td>
+            <td class="green">D_CUST_VERS</td>
+            <td>Oracle</td>
+            <td> <img  src="images/images/medal.png"></td>
+            <td>Excellent</td>
+            <td>36 MB</td>
+            <td><app-star></app-star></td>
+            <td>US</td>
+            <td (click)="showdialog()" id="show" data-toggle="modal" data-target="#myModal1"><i class="fa fa-search" aria-hidden="true" style="font-size: 20px;" ></i></td>
+          </tr>
+        
+          <!--<tr ng-hide="Clicked">
+            <p style="position:absolute;">
+              A Fact table that contains the weekly sales transactions Grain: one row per store per week numberthis is refreshed weekly.
+            </p>
+            <p>&nbsp; </p>
+          </tr>-->
+          
+
+
+          <!-- second -->
+          <tr>
+              <td><input type="checkbox" name="check1"></td>
+              <td><i class="fa fa-plus" aria-hidden="true"></i></td>
+              <td class="green">D_LYLTY_EVNT_TYPE</td>
+              <td>Oracle</td>
+              <td> <img src="images/images/medal.png"></td>
+              <td>Good</td>
+              <td>54 TB</td>
+              <td><app-star></app-star></td>
+              <td>US</td>
+              <td><i class="fa fa-search" aria-hidden="true" style="font-size: 20px;"></i></td>
+            </tr>
+            <!-- third -->
+
+            <tr>
+                <td><input type="checkbox" name="check1"></td>
+                <td><i class="fa fa-plus" aria-hidden="true"></i></td>
+                <td class="green">D_LYLTY_MBR</td>
+                <td>Oracle</td>
+                 <td> <!--<img src="assets/images/medal.png">--></td>
+                <td>Poor</td>
+                <td>82 GB</td>
+                <td><app-star></app-star></td>
+                <td>US</td>
+                <td><i class="fa fa-search" aria-hidden="true" style="font-size: 20px;"></i></td>
+              </tr>
+              <!-- fourth -->
+
+              <tr>
+                  <td><input type="checkbox" name="check1"></td>
+                  <td><i class="fa fa-plus" aria-hidden="true"></i></td>
+                  <td class="green">D_LYLTY_PGM</td>
+                  <td>Oracle</td>
+                  <td><!-- <img src="assets/images/medal.png">--></td>
+                  <td>Good</td>
+                  <td>76	MB</td>
+                  <td><app-star></app-star></td>
+                  <td>US</td>
+                  <td><i class="fa fa-search" aria-hidden="true" style="font-size: 20px;"></i></td>
+                </tr>
+                <!-- fifth -->
+                <tr>
+                    <td><input type="checkbox" name="check1"></td>
+                    <td><i class="fa fa-plus" aria-hidden="true"></i></td>
+                    <td ng-click="showDetails()" class="green">D_MOBILE_DEVICE_VERS</td>
+                    <td>Oracle</td>
+                    <td> <img src="images/images/medal.png"></td>
+                    <td>Excellent</td>
+                    <td>36 MB</td>
+                    <td><app-star></app-star></td>
+                    <td>US</td>
+                    <td><i class="fa fa-search" aria-hidden="true" style="font-size: 20px;"></i></td>
+                  </tr>
+                  <!-- sixth -->
+                  <tr>
+                      <td><input type="checkbox" name="check1"></td>
+                      <td><i class="fa fa-plus" aria-hidden="true"></i></td>
+                      <td class="green"> D_STORE_VERS</td>
+                      <td>Oracle</td>
+                      <td><!-- <img src="assets/images/medal.png">--></td>
+                      <td>Fair</td>
+                      <td>2 MB</td>
+                      <td><app-star></app-star></td>
+                      <td>US</td>
+                      <td><i class="fa fa-search" aria-hidden="true" style="font-size: 20px;"></i></td>
+                    </tr>
+                    <!-- seventh -->
+                    <tr>
+                        <td><input type="checkbox" name="check1"></td>
+                        <td><i class="fa fa-plus" aria-hidden="true"></i></td>
+                        <td class="green">D_MRCHT</td>
+                        <td>ADLS</td>
+                        <td> <img src="images/images/medal.png"></td>
+                        <td>Good</td>
+                        <td>54 TB</td>
+                        <td><app-star></app-star></td>
+                        <td>US</td>
+                        <td><i class="fa fa-search" aria-hidden="true" style="font-size: 20px;"></i></td>
+                      </tr>
+         </tbody>
+      </table>
+
+      <!--***************tablestarts-->
+       <!--<table  class="table table-responsive  table-striped table-hover" [style.display]="showTable2 ? 'block' : 'none'">
+        <thead>
+          <tr>
+              <th></th>
+              <th></th>
+              <th>Table Name</th>
+              <th>Format</th>
+              <th>Certified</th>
+              <th>Quality</th>
+              <th>Size</th>
+              <th>Avg.Review</th>
+              <th>Business<span class="caret"></span></th>
+              <th>preview</th>
+          </tr>
+          
+        </thead>
+        <tbody>
+          <tr *ngFor="let val of keyTable">
+            <td><input type="checkbox" name="check1"></td>
+            <td><i class="fa fa-plus" aria-hidden="true"></i></td>
+            <td ><span (click)="changeIcon()"><i class="fa" [ngClass]="{'fa-plus': !clicked, 'fa-minus': clicked}" aria-hidden="true"></i>
+                
+              </span>
+
+             
+            </td>
+            <td (click)="showKeyDetails(val)" class="green">{{val}}</td>
+            <td>ADLS</td>
+            <td> <img  src="images/images/medal.png"></td>
+            <td>Excellent</td>
+            <td>36 MB</td>
+            <td><app-star></app-star></td>
+            <td>US</td>
+            <td (click)="showdialog()" id="show" data-toggle="modal" data-target="#myModal1"><i class="fa fa-search" aria-hidden="true" style="font-size: 20px;" ></i></td>
+          </tr>
+        
+          <tr *ngIf="clicked">
+            <p style="position:absolute;">
+              A Fact table that contains the weekly sales transactions Grain: one row per store per week numberthis is refreshed weekly.
+            </p>
+            <p>&nbsp; </p>
+          </tr>
+        </tbody>
+       </table>
+          -->
+
+      <!--**********tableends-->
+      <div class="row">
+        <div class="col-md-6"></div>
+          <div class="col-md-6"  style="float: right">
+      <font color="green">show all</font>&nbsp;
+      <button  class=" btn pull-right" >Add to My Collection</button>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,82 @@
+
+<html>
+<head>
+    
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/angular.js."></script>
+    <link href="styles/styles.css" rel="stylesheet" type="text/css">
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+    <script src="modules/AngularModule.js"></script>
+    <script src="js/angular-ui-router.js"></script>
+    <script src="controllers/homeController.js"></script>
+    
+</head>
+<body ng-app="SbuxModule" ng-controller="homeController">
+    <!--full page container-->
+    <div class="pageContent">
+        <!--topmost header-->
+        <div class="topHeader" style="color:white">
+            {{name}}
+        </div>
+        <div class="logoHeader fluid-container">
+            <img ng-click="gotohome()" class="pull-left" src="images/slogo.png" alt="starbuckslogo">
+            <div class="col-md-1 v1"></div>
+            <h4 style="padding-left:0px;" class="col-md-3">Data Cafe</h4>
+        </div>
+        <div class="searchHeader">
+           <div class="form-group" style="margin-bottom:0px;">
+        <div class="input-group col-md-3 pull-right ">
+          <input type="text" class="form-control"  placeholder="Search Everything" ng-model="name">
+          <span class="input-group-btn">
+            <button  class="btn btn-default" style=" border-left: 0px #fff;height:33px;margin-top:14%;background-color:black;">
+              <i ng-click="displayTables()"class="fa fa-search" aria-hidden="true" style="color:white;"></i>
+            </button>
+          </span>
+        </div>
+      </div>
+      </div>
+        <!--container for three divs in main panel-->
+        <div>
+           <div class="col-md-2" style="background-color:#edeeef;height:100%;padding:0px;font-size:13px;cursor:">
+               <div ng-click="gotohome()" style="background-color: #caccce;width:100%;height:4%;margin-top:23%;padding-left:14%;"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;<b>Home</b></div>
+               <div style="width:100%;height:4%;padding-left:14%;"><i class="fa fa-book" aria-hidden="true"></i>&nbsp;Subject Areas</div>
+               <div style="width:100%;height:4%;padding-left:22%;" ng-click="gotocust()">&nbsp;Customer Analytics</div>
+               
+               <div style="width:100%;height:4%;padding-left:22%;" ng-click="gotoloc()">&nbsp;Store Locations</div>
+               
+               <div style="width:100%;height:4%;padding-left:22%;" ng-click="gotoitems()">&nbsp;Items and Products</div>
+               <div style="width:100%;height:4%;padding-left:22%;">&nbsp;Partners</div>
+               <div style="width:100%;height:4%;padding-left:22%;">&nbsp;Suppliers</div>
+               <div style="width:100%;height:4%;padding-left:14%;"><i class="fa fa-exchange" aria-hidden="true"></i>&nbsp;Transactions</div>
+               <div style="width:100%;height:4%;padding-left:22%;">&nbsp;Retail Sales</div>
+               <div style="width:100%;height:4%;padding-left:22%;">&nbsp;B2B Sales</div>
+               <div style="width:100%;height:8%;padding-left:22%;">&nbsp;Purchase Orders and invoices</div>
+               <div style="width:100%;height:4%;padding-left:14%;"><i class="fa fa-folder-open" aria-hidden="true"></i>&nbsp;Insight Catalog</div>
+               <div style="width:100%;height:4%;padding-left:14%;"><i class="fa fa-magic" aria-hidden="true"></i>&nbsp;Data Analytics</div>
+               <div style="width:100%;height:4%;padding-left:14%;"><i class="fa fa-bullhorn" aria-hidden="true"></i>&nbsp;Community Spotlight</div>
+           </div>
+           <ui-view>
+           
+           </ui-view>
+           <br>
+           <br>
+           <hr style="margin-left:18%; width:52%;">
+           <p style="margin-left:20%;font-size:15px;"><b>COMMENTS({{Comments.length}})</b></p>
+           <input id="comm" style="margin-top:1%;width:50%;height:8%;margin-left:20%;"type="text" placeholder="&nbsp;&nbsp;Join the discussion" ng-model="comment"/>
+           <div style="margin-left:66%;"><button style="background-color: green;margin-bottom:2%;" ng-click="populateComments()">Post</button></div>
+           <div style="margin-bottom:30%;">
+            
+            <div style="margin-left:20%;"  ng-repeat="comment in Comments"> 
+             <p style="color:green;font-size:12px;"><b>{{user}}</b></p>
+             <p>{{comment}}</p></div>
+          </div>
+          </div>
+          
+         
+</body>
+</html>
